@@ -11,7 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 800px;
-    
+
 
 
 }
@@ -19,13 +19,13 @@ body {
 .main_div {
 
 
-width: 700px;
-height: 500px;
+    width: 700px;
+    height: 500px;
 
-background-color: white;
-border-radius: 10px;
-outline-style:double;
-outline-color: rgb(239, 249, 239);
-outline-width: 10px;
+    background-color: white;
+    border-radius: 10px;
+    outline-style: double;
+    outline-color: rgb(239, 249, 239);
+    outline-width: 10px;
 
 }

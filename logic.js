@@ -24,17 +24,20 @@ class Butterfly {
 class Flower {
   constructor(healingProperty) {
     this.healingProperty = healingProperty;
-    
     this.flower = document.createElement("div");
-    this.flower.style.left = Math.floor(Math.random() * (divWidth - 50));;
-    this.flower.style.bottom = "0px";
+    this.left = Math.floor(Math.random() * (divWidth - 50));
+    this.bottom = 0;
     //this.isLoaded = isLoaded;
     this.width = 30;
     this.height = 30;
-    this.flower.style.position = "relative";
-    this.flower.style.backgroundColor = "pink";
 
-    this.appendFlowerToDom();
+    this.flower.style.position = "relative";
+    this.flower.style.left = `${this.left}px`;
+    this.flower.style.backgroundColor = "pink";
+    this.flower.style.width = `${this.width}px`;
+    this.flower.style.height = `${this.height}px`;
+    this.flower.style.bottom = `${this.bottom}px`;
+
   }
 
     appendFlowerToDom(){

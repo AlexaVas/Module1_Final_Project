@@ -21,19 +21,35 @@
 
 ///////////////////// FLOWER FALLING ////////////////////////
 
-let flowerField = [
+function flowerFieldGenerator() {
+  const flowerField = [new Flower(5), new Flower(5), new Flower(5)];
 
-    new Flower(5),
-    new Flower(5),
-    new Flower(10),];
+  flowerField.forEach((flowerItem) => {
+    flowerItem.appendFlowerToDom();
+  });
+
+  for (let i = 0; i < 1; i++) {
+    flowerField.push(new Flower(10));
+  }
+
+  function fallingFlowerFields() {
+    for (let i = 0; i < flowerField.length; i++) {
+      let moveDown = flowerField[i].bottom;
+
+      moveDown -= 5;
+
+     return flowerField[i].bottom = `${moveDown}px`;
+    }
+
+  }
+
+    fallingFlowerFields();
+
+}
+
+flowerFieldGenerator();
 
 
-
-
-for (let i = 0; i < 1; i++ ){
-
-    flowerField.push(new Flower (5));
-};
 
 
 
@@ -42,28 +58,28 @@ for (let i = 0; i < 1; i++ ){
 //function generateFruits () {
     
 
-    let flowerBottom = 0;
+   // let flowerBottom = 0;
     //let flowerLeft = Math.floor(Math.random() * (divWidth - 50));
-    flower.style.left = `${flowerLeft}px`;
+    // flower.style.left = `${flowerLeft}px`;
 
-    function flowerFalling() {
+    // function flowerFalling() {
 
-     if (flowerBottom < - 450) return;
+    //  if (flowerBottom < - 450) return;
 
-     flowerBottom -= 5;
-     flower.style.bottom = `${flowerBottom}px`;
+    //  flowerBottom -= 5;
+    //  flower.style.bottom = `${flowerBottom}px`;
  
-     }
+    //  }
 
-    flowerFalling();
-    setInterval(flowerFalling,50);
+    // flowerFalling();
+    // setInterval(flowerFalling,50);
 
 
-  };
+ // };
 
   
-  generateFruits();
-  setInterval(generateFruits,5000);
+//   generateFruits();
+//   setInterval(generateFruits,5000);
 
 
 
