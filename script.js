@@ -15,53 +15,11 @@ window.onload = function () {
     game = new Game();
 
     game.start()
+    // game.butterflyMoves()
   }
+  
 
-
-  ///////////////////// FLOWER FALLING ////////////////////////
-
-  // function flowerFieldGenerator() {
-  //   const flowerField = [new Flower(5), new Flower(5), new Flower(5)];
-
-  //   flowerField.forEach((flowerItem) => {
-  //     flowerItem.appendFlowerToDom();
-  //   });
-
-    ///////////////////////New Push/////////////////////////////
-
-    // for (let i = 0; i < 1; i++) {
-    //   flowerField.push(new Flower(10));
-    // }
-
-    // flowerField.forEach((flowerItem) => {
-    //   flowerItem.appendFlowerToDom();
-    // });
-
-    ////////////////////////////////////////////////////////////
-
-    // function fallingFlowerFields() {
-    //   for (let i = 0; i < flowerField.length; i++) {
-    //     let moveDown = flowerField[i].bottom;
-
-    //     moveDown -= 5;
-    //     console.log(moveDown);
-
-    //     flowerField[i].bottom = `${moveDown}`;
-
-    //     console.log(flowerField[i].bottom);
-    //     flowerField[i].falling;
-    //   }
-    // }
-
-    //     fallingFlowerFields();
-    //   }
-
-    //   flowerFieldGenerator();
    }  
-
-
-
-
 
 
 
