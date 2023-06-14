@@ -12,10 +12,14 @@ window.onload = function () {
 
   function startGame(){
     console.log("new game");
+    let gameScreen = document.querySelector(".main-div");
+    gameScreen.style.display = "block";
+    let pointBoard = document.querySelector(".point-board");
+    pointBoard.style.display = "block";
     game = new Game();
 
     game.start()
-    // game.butterflyMoves()
+    
   }
   
 

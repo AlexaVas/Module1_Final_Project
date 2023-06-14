@@ -104,6 +104,10 @@ class Butterfly {
       return false;
     }
   }
+
+  removeChild() {
+    this.gameScreen.removeChild(this.player);
+  }
 }
 
 ////////////////////////////////// END OF BUTTERFLY CLASS////////////////////////////////////////////

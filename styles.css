@@ -3,16 +3,145 @@ body {
 
 }
 
+.intro-parent {
+
+
+display: flex;
+height: 700px;
+width: 100vw;
+justify-content: center;
+align-items: center;
+position: relative;
+bottom: 800px;
+flex-direction: column;
+gap: 10px;
+
+
+font-size: large;
+color: rgba(36, 170, 105, 0.974);;
+font-family: 'Lucida Sans', sans-serif;
+
+}
+
+.intro-parent > img:nth-child(2) {
+
+
+height: 100px;
+position: relative;
+top: 35px;
+left: 290px;
+transform:rotate(7deg);
+
+}
+
+.intro-page > img:nth-child(3) {
+
+    height: 70px;
+    position: relative;
+    top: 60px;
+}
+
+.intro-page {
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+height: 400px;
+width: 600px;
+border-radius: 10px;
+
+font-family: 'Lucida Sans', sans-serif;
+font-weight: 600;
+
+gap: 10px;
+
+outline-style: double;
+outline-style: double;
+outline-color: rgb(239, 249, 239);
+outline-width: 10px;
+
+}
+
+
+
+.intro-page > img:nth-child(4){
+
+
+height: 50px;
+position: relative;
+left: -290px;
+top: 85px
+
+
+
+}
+.intro-page>img:nth-child(5) {
+
+
+    height: 50px;
+    position: relative;
+    left: -280px;
+    top: 70px
+
+
+
+}
+.intro-page>img:nth-child(6) {
+
+
+    height: 50px;
+    position: relative;
+    left: -230px;
+    top: 17px
+
+
+
+}
+
+/*****************************ANIMATION **********************************/
+
+.intro-page {
+    background: linear-gradient(270deg, #73da6de9, #f4e382, #f6d686);
+    background-size: 600% 600%;
+
+    -webkit-animation: summergarden 5s ease infinite;
+    -moz-animation: summergarden 5s ease infinite;
+    animation: summergarden 5s ease infinite;
+}
+
+@-webkit-keyframes summergarden {
+
+    0% {
+        background-position: 70% 30%
+    }
+
+    50% {
+        background-position: 80% 50%
+    }
+
+    100% {
+        background-position: 70% 30%
+    }
+}
+
+
+
+
+/*****************************ANIMATION END **********************************/
+
+
+
+
 .container {
 
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 800px;
-
-
 
 }
 
@@ -27,5 +156,50 @@ body {
     outline-style: double;
     outline-color: rgb(239, 249, 239);
     outline-width: 10px;
+    display: none;
+
+}
+
+.point-board {
+
+/* background-color: yellow; */
+height: 70px;
+width: 100px;
+position: relative;
+bottom: 60px;
+display: none;
+
+
+}
+
+.point-board > h2 {
+
+
+text-align: center;
+color: rgb(143, 187, 143);
+font-family:'Lucida Sans',  sans-serif;
+
+
+
+
+}
+
+
+.final-message {
+
+position: relative;
+top: 200px;
+left: 200px;
+color:rgba(214, 187, 241, 0.974);
+font-family: 'Lucida Sans', sans-serif;
+font-weight:bolder;
+font-size:xx-large;
+font-size: 50px;
+outline-style: double;
+display: inline;
+outline-width: 5px;
+outline-color: rgb(239, 249, 239);
+display: none;
+
 
 }
