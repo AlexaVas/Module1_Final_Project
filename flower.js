@@ -1,8 +1,4 @@
 /** @format */
-
-//let div = document.querySelector(".main_div");
-//let divWidth = parseInt(window.getComputedStyle(div).getPropertyValue("width"));
- 
  
 ////////////////////////////////// BUTTERFLY CLASS////////////////////////////////////////////
 
@@ -112,11 +108,12 @@ class Butterfly {
 
 ////////////////////////////////// END OF BUTTERFLY CLASS////////////////////////////////////////////
 
-
 class Flower {
   constructor(healingProperty, imgSrc) {
     this.gameScreen = document.querySelector(".main-div");
-    this.divWidth = parseInt(window.getComputedStyle(this.gameScreen).getPropertyValue("width"));
+    this.divWidth = parseInt(
+      window.getComputedStyle(this.gameScreen).getPropertyValue("width")
+    );
     this.divHeigth = parseInt(
       window.getComputedStyle(this.gameScreen).getPropertyValue("height")
     );
@@ -124,73 +121,48 @@ class Flower {
     this.screenHeight = window.innerHeight;
 
     this.screenWidth = window.innerWidth;
-    
+
     console.log("screen width " + this.screenWidth);
     console.log(this.divWidth);
     this.healingProperty = healingProperty;
     this.imgSrc = imgSrc;
     this.flower1 = document.createElement("img");
-    // this.bottom = this.divHeigth;
     console.log("div height: " + this.divHeigth);
     console.log("this bottom: " + this.bottom);
     this.width = 50;
     this.height = 50;
-    // this.left = (this.divWidth/1.8) + Math.floor(
-    //   Math.random() * (this.divWidth - this.width - this.width)
-    // );
 
-    this.top =  (this.screenHeight - this.divHeigth)/2;
+    this.top = (this.screenHeight - this.divHeigth) / 2;
 
     this.left =
-      (this.screenWidth - this.divWidth)/2 + this.width +
-      Math.floor(Math.random() * (this.divWidth - this.width*2));
+      (this.screenWidth - this.divWidth) / 2 +
+      this.width +
+      Math.floor(Math.random() * (this.divWidth - this.width * 2));
 
-      
     this.flower1.src = `${this.imgSrc}`;
     this.flower1.style.position = "absolute";
     this.flower1.style.left = `${this.left}px`;
-     this.flower1.style.top = `${this.top}px`;
+    this.flower1.style.top = `${this.top}px`;
     this.flower1.style.width = `${this.width}px`;
     this.flower1.style.height = `${this.height}px`;
     this.flower1.style.bottom = `${this.bottom}px`;
 
-   
-      
-     this.gameScreen.appendChild(this.flower1);
+    this.gameScreen.appendChild(this.flower1);
   }
 
-    
+  updateFalling() {
+    this.flower1.style.top = `${this.top}px`;
+  }
 
-    updateFalling(){
+  move() {
+    this.top += 5;
 
-      this.flower1.style.top = `${this.top}px`;
+    this.updateFalling();
+  }
 
-
-    }
-
-    move () {
-
-
-      this.top +=5;
-
-      this.updateFalling();
-
-    }
-
-    removeChild () {
-
-      this.gameScreen.removeChild(this.flower1);
-
-
-
-    }
-
-    
-
-
-
-
- 
+  removeChild() {
+    this.gameScreen.removeChild(this.flower1);
+  }
 }
 
 ////////////////////////////////// END OF FLOWER CLASS////////////////////////////////////////////
@@ -244,8 +216,8 @@ class Bird {
 
 ////////////////////////////////// BIRD ONE ATTACKS ////////////////////////////////////////////
 
-const birdOne = new Bird(10);
+//const birdOne = new Bird(10);
 
 ////////////////////////////////// BIRD TWO ATTACKS ////////////////////////////////////////////
 
-const birdTwo = new Bird(20);
+//const birdTwo = new Bird(20);

@@ -2,26 +2,36 @@
 
 class Game {
   constructor() {
-    
+
+    ////////////////////////////////////RETRIEVING DOM ELEMENTS/ VALUES //////////////////////////////////
+
     this.startScreen = document.querySelector(".intro-container");
     this.gameScreen = document.querySelector(".main-div");
     this.screenTotalHeight = window.innerHeight;
     this.gameScreenHeight = this.gameScreen.offsetHeight;
     this.container = document.querySelector(".container");
     this.scoreBoard = document.querySelector(".point-board");
+    this.pointBoard = document.querySelector("h2");
 
-    ////////////////////////BOTTOM OF THE DIV CALC. ///////////////////////////////////
+    this.text = "HEALTH POINTS: 10";
+    this.pointBoard.innerHTML = `${this.text}`;
 
-   this.containerHeight = this.container.offsetHeight;
+    this.gameBoard = document.querySelector(".final-message");
+
+    this.introParent = document.querySelector(".intro-parent");
+
+
+    /////////////////////////////////BOTTOM OF THE DIV CALC. ///////////////////////////////////////////////
+
+    this.containerHeight = this.container.offsetHeight;
     this.scoreBoardHeight = this.scoreBoard.offsetHeight;
 
-    this.bottomValue = (this.containerHeight - (this.gameScreenHeight + this.scoreBoardHeight))/2 + (this.gameScreenHeight + this.scoreBoardHeight);
+    this.bottomValue =
+      (this.containerHeight - (this.gameScreenHeight + this.scoreBoardHeight)) /
+        2 +
+      (this.gameScreenHeight + this.scoreBoardHeight);
 
-    console.log("Bottom Value: " + this.bottomValue);
-    //////////////////////////////////////////////////////////////////////////////
-
-    console.log("game screen height:" + this.gameScreenHeight);
-    console.log("screenTotalHeight: " + this.screenTotalHeight);
+    ////////////////////////////////////////////CREATING AN ARRAY//////////////////////////////////////////////
 
     this.flowerField = [
       new Flower(5, "images/rose.png"),
@@ -31,21 +41,15 @@ class Game {
 
     this.player = new Butterfly();
     this.player.fly();
-    console.log(this.player.health);
 
-    this.pointBoard = document.querySelector("h2");
 
-    this.text = "HEALTH POINTS: 10";
-    this.pointBoard.innerHTML = `${this.text}`;
-
-    this.gameBoard = document.querySelector(".final-message");
-
-    this.introParent = document.querySelector(".intro-parent");
   }
+  
+  ////////////////////////////////////////////END OF CONSTRUCTOR/////////////////////////////////////////////
 
+  /////////////////////////////////////SETTING INTERVALS AND PUSHING ELEMENTS/////////////////////////////////
   start() {
-      this.startScreen.style.display = "none";
-    // this.gameScreen.style.display = "block";
+    this.startScreen.style.display = "none";
 
     this.introParent.style.display = "none";
 
@@ -66,9 +70,9 @@ class Game {
 
     console.log("its calling game.start");
   }
-
+  /////////////////////////////////////UPDATING SCORE AND REMOVING ELEMNTS/////////////////////////////////
   update() {
-    console.log("its calling update");
+    
 
     for (let i = 0; i < this.flowerField.length; i++) {
       const flower = this.flowerField[i];
@@ -79,29 +83,40 @@ class Game {
         this.player.health > 0 &&
         this.player.health < 100
       ) {
-        // Remove the obstacle element from the DOM
         flower.removeChild();
-        // Remove obstacle object from the array
+
         this.flowerField.splice(i, 1);
-        // Reduce player's lives
+
         this.player.heal(flower.healingProperty);
-        console.log(
-          "This is butterfly´s current health: " + this.player.health
-        );
+
         this.pointBoard.innerHTML = `HEALTH POINTS: ${this.player.health}`;
       } else if (this.player.didCollide(flower) && this.player.health >= 100) {
         this.gameBoard.style.display = "inline";
+
         this.gameBoard.innerHTML = `YOU WIN!`;
+
         this.player.removeChild();
       } else if (this.player.didCollide(flower) && this.player.health <= 0) {
         this.gameBoard.style.display = "inline";
+
         this.gameBoard.innerHTML = `GAME OVER`;
+
         this.player.removeChild();
-      } else if (
-        flower.top > (this.bottomValue - flower.height)) {
+      } else if (flower.top > this.bottomValue - flower.height) {
         flower.removeChild();
+
         this.flowerField.splice(i, 1);
       }
     }
+  }
+}
+
+/////////////////////////////////////////////AUDIO CLASS///////////////////////////////////////////////////////
+class MyAudio {
+  constructor(audioPath) {
+    this.audio = new Audio(audioPath);
+  }
+  play() {
+    this.audio.play();
   }
 }
