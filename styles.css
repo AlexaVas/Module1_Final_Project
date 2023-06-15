@@ -77,25 +77,24 @@ body {
 /*****************************ANIMATION **********************************/
 
 .intro-page {
-  background: linear-gradient(270deg, #73da6de9, #f4e382, #f6d686);
+  background: linear-gradient(270deg, #73da6de9, #efb7d4, #f6d686);
   background-size: 600% 600%;
 
-  -webkit-animation: summergarden 5s ease infinite;
-  -moz-animation: summergarden 5s ease infinite;
-  animation: summergarden 5s ease infinite;
+  -webkit-animation: summergarden 20s ease infinite;
+  
 }
 
 @-webkit-keyframes summergarden {
-  0% {
-    background-position: 70% 30%;
+  20% {
+    background-position: 80% 20%;
   }
 
   50% {
-    background-position: 80% 50%;
+    background-position: 80% 20%;
   }
 
-  100% {
-    background-position: 70% 30%;
+  80% {
+    background-position: 20% 80%;
   }
 }
 
