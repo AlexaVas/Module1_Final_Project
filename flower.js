@@ -120,7 +120,9 @@ class Flower {
     this.divHeigth = parseInt(
       window.getComputedStyle(this.gameScreen).getPropertyValue("height")
     );
+
     
+
     this.screenWidth = window.innerWidth;
     
     console.log("screen width " + this.screenWidth);
@@ -128,7 +130,9 @@ class Flower {
     this.healingProperty = healingProperty;
     this.imgSrc = imgSrc;
     this.flower1 = document.createElement("img");
-    this.bottom = this.divHeigth + 100;
+    this.bottom = this.divHeigth;
+    console.log("div height: " + this.divHeigth);
+    console.log("this bottom: " + this.bottom);
     this.width = 50;
     this.height = 50;
     // this.left = (this.divWidth/1.8) + Math.floor(
@@ -136,9 +140,10 @@ class Flower {
     // );
 
     this.left =
-      this.screenWidth / 4 +
-      Math.floor(Math.random() * (this.divWidth - this.width - this.width));
+      (this.screenWidth - this.divWidth)/2 + this.width +
+      Math.floor(Math.random() * (this.divWidth - this.width*2));
 
+      
     this.flower1.src = `${this.imgSrc}`;
     this.flower1.style.position = "absolute";
     this.flower1.style.left = `${this.left}px`;
