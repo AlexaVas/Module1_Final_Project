@@ -11,9 +11,9 @@ class Game {
 
     console.log(this.gameScreen, "this is gamescreen");
     this.flowerField = [
-      new Flower(5, "/images/rose.png"),
-      new Flower(5, "/images/rose.png"),
-      new Flower(10, "/images/rose.png"),
+      new Flower(5, "images/rose.png"),
+      new Flower(5, "images/rose.png"),
+      new Flower(10, "images/rose.png"),
     ];
 
     this.player = new Butterfly();
@@ -45,7 +45,7 @@ class Game {
       () =>
         this.flowerField.push(
           new Flower(-5, "images/flying humming bird png.png"),
-          new Flower(10, "/images/rose.png")
+          new Flower(10, "images/rose.png")
         ),
       2000
     );
@@ -85,7 +85,7 @@ class Game {
        } else if (this.player.didCollide(flower) && this.player.health >= 100) {
             
              this.gameBoard.style.display = "inline";
-             this.gameBoard.innerHTML = `YOU SURVIVED!`;
+             this.gameBoard.innerHTML = `YOU WIN!`;
              this.player.removeChild();
        } else if (this.player.didCollide(flower) && this.player.health <= 0) {
          
