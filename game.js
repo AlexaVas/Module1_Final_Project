@@ -2,18 +2,27 @@
 
 class Game {
   constructor() {
+    
     this.startScreen = document.querySelector(".intro-container");
-
     this.gameScreen = document.querySelector(".main-div");
-    
-    
     this.screenTotalHeight = window.innerHeight;
     this.gameScreenHeight = this.gameScreen.offsetHeight;
+    this.container = document.querySelector(".container");
+    this.scoreBoard = document.querySelector(".point-board");
+
+    ////////////////////////BOTTOM OF THE DIV CALC. ///////////////////////////////////
+
+   this.containerHeight = this.container.offsetHeight;
+    this.scoreBoardHeight = this.scoreBoard.offsetHeight;
+
+    this.bottomValue = (this.containerHeight - (this.gameScreenHeight + this.scoreBoardHeight))/2 + (this.gameScreenHeight + this.scoreBoardHeight);
+
+    console.log("Bottom Value: " + this.bottomValue);
+    //////////////////////////////////////////////////////////////////////////////
 
     console.log("game screen height:" + this.gameScreenHeight);
     console.log("screenTotalHeight: " + this.screenTotalHeight);
 
-    
     this.flowerField = [
       new Flower(5, "images/rose.png"),
       new Flower(5, "images/rose.png"),
@@ -35,7 +44,7 @@ class Game {
   }
 
   start() {
-    // this.startScreen.style.display = "none";
+      this.startScreen.style.display = "none";
     // this.gameScreen.style.display = "block";
 
     this.introParent.style.display = "none";
@@ -88,7 +97,8 @@ class Game {
         this.gameBoard.style.display = "inline";
         this.gameBoard.innerHTML = `GAME OVER`;
         this.player.removeChild();
-      } else if (flower.bottom < ((this.screenTotalHeight - this.gameScreenHeight)/2) - flower.width) {
+      } else if (
+        flower.top > (this.bottomValue - flower.height)) {
         flower.removeChild();
         this.flowerField.splice(i, 1);
       }
