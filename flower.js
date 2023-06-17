@@ -52,7 +52,7 @@ class Butterfly {
       const moveDirection = 20;
 
       if (key === "ArrowDown") {
-        if (this.bottom < this.divHeigth - this.height) {
+        if (this.bottom > -this.divHeigth + this.height) {
           this.bottom -= moveDirection;
           this.gradient = "rotate(180deg)";
         }
