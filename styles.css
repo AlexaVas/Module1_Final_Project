@@ -1,7 +1,87 @@
 /** @format */
 
+
+/************************ MOBILE VERSION **************************/
+
+@media screen and (max-width: 900px) {
+
+
+    html {
+
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        
+    }
+
+    .butterfly-parent > img {
+
+        display: block !important;
+        height: 70px;
+        position: relative;
+        bottom: 60px;
+
+
+    }
+
+    .intro-page {
+        
+        display: none !important;
+    }
+
+    .intro-parent {
+
+        display: none ;
+
+        margin-top: 10%;
+
+
+    }
+
+
+    .intro-parent > img {
+        
+        top: -100px !important;
+        left: 140px !important;
+        height: 50px !important;
+    }
+
+    .mobile-message {
+
+        display: block !important;
+
+        width: 80%;
+        text-align: center;
+        position: relative;
+        bottom: 50px;
+
+
+
+    }
+    
+
+
+
+}
+
+
+
+/************************ DESKTOP VERSION **************************/
+
+
 body {
   background-color: rgb(218, 246, 215);
+}
+
+.butterfly-parent > img {
+
+    display: none;
+}
+
+.mobile-message {
+
+    display: none;
 }
 
 .intro-parent {
